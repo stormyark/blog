@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-/*import { Geist, Geist_Mono, IBM_Plex_Mono } from "next/font/google";*/
-import { IBM_Plex_Mono } from "next/font/google";
+import { Inter, IBM_Plex_Mono } from "next/font/google";
 import Header from "../components/Header/Header";
 import "./globals.css";
 
@@ -9,6 +8,11 @@ const ibmPlexMono = IBM_Plex_Mono({
   weight: ["400", "500", "700"], // Add the weights you need
   subsets: ["latin"],
   variable: "--font-ibm-plex-mono",
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
 });
 
 /*
@@ -57,7 +61,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="de">
-      <body className={`${ibmPlexMono.variable} antialiased`}>
+      <body className={`${ibmPlexMono.variable} ${inter.variable} antialiased`}>
         <Header />
         {children}
         <SpeedInsights />
