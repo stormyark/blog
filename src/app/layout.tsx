@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Inter, IBM_Plex_Mono } from "next/font/google";
-import Header from "../components/Header/Header";
+import { Header, Footer } from "../components";
 import "./globals.css";
 
 const ibmPlexMono = IBM_Plex_Mono({
@@ -65,6 +65,7 @@ export default function RootLayout({
         <Header />
         {children}
         <SpeedInsights />
+        <Footer />
       </body>
     </html>
   );
